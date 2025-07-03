@@ -84,22 +84,21 @@ const Header = () => {
 
             
             {/* Title and subtitle */}
-            <div className="ml-4">
-             <h1 className="text-isro-blue font-heading font-bold text-2xl">
-             Meteorological & Oceanographic Satellite Data Archival Centre
-             </h1>
-            
+           <div className="ml-4">
+           <h1 className="text-mosdac font-heading font-bold text-2xl">
+           {text[language].title}
+           </h1>
+           <p className="text-mosdac text-sm font-medium">
+           {text[language].subtitle}
+           </p>
+           </div>
 
-              <p className="text-gray-600 text-sm">
-                {text[language].subtitle}
-              </p>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Navigation menu */}
-      <nav className="bg-gov-primary text-white" role="navigation" aria-label="Main navigation">
+      <nav className="bg-mosdac text-white" role="navigation" aria-label="Main navigation">
         <div className="flex">
           <div className="flex">
             {['Home', 'Missions', 'Catalog', 'Galleries', 'Data Access', 'Reports', 'Atlases', 'Tools', 'Sitemap', 'Help'].map((item) => (

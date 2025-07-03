@@ -29,7 +29,7 @@ const QuickFilters = ({ onCategorySelect }: QuickFiltersProps) => {
                 key={category.key}
                 onClick={() => onCategorySelect(category.key)}
                 variant="outline"
-                className="flex items-center gap-2 px-6 py-3 h-auto border-2 border-isro-blue text-isro-blue hover:bg-isro-blue hover:text-white transition-all duration-200 hover:scale-105"
+                className="flex items-center gap-2 px-6 py-3 h-auto border-2 border-mosdac text-mosdac hover:bg-mosdac hover:text-white transition-all duration-200 hover:scale-105"
               >
                 <IconComponent className="h-5 w-5" />
                 <span className="font-medium">{category.label}</span>

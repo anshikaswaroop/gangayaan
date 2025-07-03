@@ -22,7 +22,7 @@ export default {
              heading: ['"Noto Sans"', 'sans-serif'],
              },
 			colors: {
-				mosdac: "#0066cc",
+				mosdac: "#004a94",
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -41,9 +41,10 @@ export default {
 				'chat-bot': 'hsl(var(--chat-bot))',
 				'gov-header': 'hsl(var(--gov-header))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
+                DEFAULT: 'hsl(var(--primary))',
+                foreground: 'hsl(var(--primary-foreground))'
+                },
+
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'

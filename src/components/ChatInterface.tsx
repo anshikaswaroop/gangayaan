@@ -151,7 +151,7 @@ const ChatInterface = ({ language, onLanguageChange }: ChatInterfaceProps) => {
       {/* Chat Container */}
       <div className="bg-white rounded-lg shadow-lg border border-gray-200 h-[calc(100vh-200px)] flex flex-col">
         {/* Chat Header */}
-        <div className="bg-gov-primary text-white p-4 rounded-t-lg flex items-center justify-between">
+        <div className="bg-mosdac text-white p-4 rounded-t-lg flex items-center justify-between">
           <div>
             <h2 className="font-semibold text-lg">
               {language === 'en' ? 'ISRO Help Assistant' : 'ISRO सहायक'}
@@ -184,7 +184,7 @@ const ChatInterface = ({ language, onLanguageChange }: ChatInterfaceProps) => {
                 variant="outline"
                 size="sm"
                 onClick={() => handleQuickTopic(topic.key)}
-                className="text-xs border-isro-blue text-isro-blue hover:bg-isro-blue hover:text-white"
+                className="text-xs border-mosdac text-mosdac hover:bg-mosdac hover:text-white"
               >
                 <span className="mr-1">{topic.icon}</span>
                 {topic.label}
@@ -285,7 +285,7 @@ const ChatInterface = ({ language, onLanguageChange }: ChatInterfaceProps) => {
             <Button
               onClick={() => handleSendMessage()}
               disabled={!inputText.trim()}
-              className="bg-isro-blue hover:bg-isro-blue/90 text-white px-6"
+              className="bg-mosdac hover:bg-isro-blue/90 text-white px-6"
             >
               <Send className="h-4 w-4 mr-2" />
               {text[language].send}
