@@ -49,7 +49,7 @@ const Footer = () => {
         </a>
 
         <a href="https://www.sac.gov.in" target="_blank" rel="noopener noreferrer">
-         <img src="public/Space_Applications_Centre_logo.png" alt="SAC" className="h-14 hover:opacity-80 transition" />
+         <img src="Space_Applications_Centre_logo.png" alt="SAC" className="h-14 hover:opacity-80 transition" />
         </a>
         <a href="https://www.india.gov.in" target="_blank" rel="noopener noreferrer">
          <img src="India.gov.in.webp" alt="India.gov.in" className="h-14 hover:opacity-80 transition" />
