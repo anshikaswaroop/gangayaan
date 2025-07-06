@@ -2,10 +2,8 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import ChatInterface from "@/components/ChatInterface";
-import ChatbotFloat from "@/components/ChatbotFloat";
-import QuickFilters from "@/components/QuickFilters";
-import KnowledgeCards from "@/components/KnowledgeCards";
-import FileViewer from "@/components/FileViewer";
+import Footer from "@/components/Footer";
+
 
 const Index = () => {
   const [language, setLanguage] = useState<'en' | 'hi'>('en');
@@ -32,24 +30,18 @@ const Index = () => {
         className="flex-1"
         role="main"
         aria-label="MOSDAC ChatBot Interface"
+        
+        
       >
-        {/* Original Chat Interface */}
-        <ChatInterface language={language} onLanguageChange={setLanguage} />
+        <div className="mb-10"> {/* 👈 you can change mb-8 to mb-10 or mb-12 for more space */}
+       <ChatInterface language={language} onLanguageChange={setLanguage} />
+       </div> 
+
+      
         
-        {/* Quick Filter Buttons */}
-        <QuickFilters onCategorySelect={handleCategorySelect} />
-        
-        {/* Knowledge Cards Section */}
-        <div id="knowledge-section">
-          <KnowledgeCards category={selectedCategory} />
-        </div>
-        
-        {/* File Viewer Section */}
-        <FileViewer />
+       <Footer />
       </main>
       
-      {/* Floating MEERA Chatbot */}
-      <ChatbotFloat />
     </div>
   );
 };
