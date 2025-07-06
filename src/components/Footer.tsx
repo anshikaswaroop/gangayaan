@@ -16,8 +16,8 @@ const Footer = () => {
 
         <div className="flex items-center gap-2">
           <span className="font-semibold">FOLLOW US</span>
-          <img src="public/fb.png" alt="ISRO" className="h-4 mx-auto" />
-          <img src="public/yb.png" alt="ISRO" className="h-6 mx-auto" />
+          <img src="fb.png" alt="ISRO" className="h-4 mx-auto" />
+          <img src="yb.png" alt="ISRO" className="h-6 mx-auto" />
           <a href="#" aria-label="Facebook"></a>
           
           <a href="#" aria-label="YouTube"></a>
@@ -45,23 +45,23 @@ const Footer = () => {
       <div className="bg-white py-3 px-4 border-t border-white/10">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-4 items-center justify-center">
         <a href="https://www.isro.gov.in" target="_blank" rel="noopener noreferrer">
-        <img src="public/isro.png" alt="ISRO" className="h-14 hover:opacity-80 transition" />
+        <img src="isro.png" alt="ISRO" className="h-14 hover:opacity-80 transition" />
         </a>
 
         <a href="https://www.sac.gov.in" target="_blank" rel="noopener noreferrer">
          <img src="public/Space_Applications_Centre_logo.png" alt="SAC" className="h-14 hover:opacity-80 transition" />
         </a>
         <a href="https://www.india.gov.in" target="_blank" rel="noopener noreferrer">
-         <img src="public/India.gov.in.webp" alt="India.gov.in" className="h-14 hover:opacity-80 transition" />
+         <img src="India.gov.in.webp" alt="India.gov.in" className="h-14 hover:opacity-80 transition" />
         </a>
         <a href="https://www.mygov.in" target="_blank" rel="noopener noreferrer">
-         <img src="public/my gov.png" alt="MyGov" className="h-14 hover:opacity-80 transition" />
+         <img src="my gov.png" alt="MyGov" className="h-14 hover:opacity-80 transition" />
         </a>
         <a href="https://digitalindia.gov.in" target="_blank" rel="noopener noreferrer">
-         <img src="public/download.png" alt="Digital India" className="h-14 hover:opacity-80 transition" />
+         <img src="download.png" alt="Digital India" className="h-14 hover:opacity-80 transition" />
         </a>
         <a href="https://data.gov.in" target="_blank" rel="noopener noreferrer">
-         <img src="public/data-gov.png" alt="Data.gov.in" className="h-14 hover:opacity-80 transition" />
+         <img src="data-gov.png" alt="Data.gov.in" className="h-14 hover:opacity-80 transition" />
         </a>
         </div>
         <p className="text-center text-xs text-black mt-2">

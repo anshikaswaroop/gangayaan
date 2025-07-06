@@ -78,7 +78,7 @@ const Header = () => {
               
               {/* MOSDAC Logo */}
               <div className="bg-white px-3 py-2 rounded">
-              <img src="public/mosdac_small.png" alt="MOSDAC Logo" className="w-54 h-auto" />
+              <img src="mosdac_small.png" alt="MOSDAC Logo" className="w-54 h-auto" />
               </div>
               </div>
 
