@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/2673a081-e1fe-4ab9-8b8c-1feafd2c699c
+**URL**: https://anshikaswaroop/gangayaan/versel.app
 
 ## How can I edit this code?
 
