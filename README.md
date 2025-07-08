@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://anshikaswaroop/gangayaan/versel.app
+**URL**: https://gangayaan.vercel.app/
 
 ## How can I edit this code?
 
