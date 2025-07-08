@@ -54,8 +54,7 @@ const ChatInterface = ({ language, onLanguageChange }: ChatInterfaceProps) => {
       insatData: "INSAT Satellite Data",
       oceanForecasts: "Ocean Forecasts",
       cityWeather: "City Weather",
-      cycloneAlerts: "Cyclone Alerts",
-      downloadDatasets: "Download Datasets"
+      cycloneAlerts: "Cyclone Alerts"
     },
     hi: {
       placeholder: "उपग्रह डेटा, मौसम, समुद्री पूर्वानुमान, या चक्रवात अलर्ट के बारे में पूछें...",
@@ -74,49 +73,58 @@ const ChatInterface = ({ language, onLanguageChange }: ChatInterfaceProps) => {
     { key: 'insat', icon: '🛰️', label: text[language].insatData },
     { key: 'ocean', icon: '🌊', label: text[language].oceanForecasts },
     { key: 'weather', icon: '☁️', label: text[language].cityWeather },
-    { key: 'cyclone', icon: '🌀', label: text[language].cycloneAlerts },
-    { key: 'download', icon: '📥', label: text[language].downloadDatasets }
+    { key: 'cyclone', icon: '🌀', label: text[language].cycloneAlerts }
   ];
 
-  const handleSendMessage = (messageText?: string) => {
-    const textToSend = messageText || inputText;
-    if (!textToSend.trim()) return;
+  const handleSendMessage = async (messageText?: string) => {
+  const textToSend = messageText || inputText;
+  if (!textToSend.trim()) return;
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      text: textToSend,
-      isUser: true,
+  const userMessage: Message = {
+    id: Date.now().toString(),
+    text: textToSend,
+    isUser: true,
+    timestamp: new Date()
+  };
+
+  setMessages(prev => [...prev, userMessage]);
+  setInputText("");
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: textToSend })
+    });
+
+    const data = await response.json();
+
+    const botMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      text: data.response || (language === 'en'
+        ? "Sorry, I couldn't understand that."
+        : "माफ़ कीजिए, मैं समझ नहीं पाया।"),
+      isUser: false,
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setInputText("");
+    setMessages(prev => [...prev, botMessage]);
 
-    // Simulate bot response
-    setTimeout(() => {
-      const botResponse: Message = {
-        id: (Date.now() + 1).toString(),
-        text: language === 'en' 
-          ? "Here's what I found for your query:"
-          : "आपके प्रश्न के लिए यहां जानकारी है:",
-        isUser: false,
-        timestamp: new Date(),
-        cards: [
-          {
-            title: language === 'en' ? "Related Information" : "संबंधित जानकारी",
-            description: language === 'en' 
-              ? "Access detailed satellite data and weather information through our portal"
-              : "हमारे पोर्टल के माध्यम से विस्तृत उपग्रह डेटा और मौसम जानकारी प्राप्त करें",
-            links: [
-              { text: language === 'en' ? "Full details on MOSDAC" : "MOSDAC पर पूर्ण विवरण", url: "#" },
-              { text: language === 'en' ? "Download Data" : "डेटा डाउनलोड करें", url: "#" }
-            ]
-          }
-        ]
-      };
-      setMessages(prev => [...prev, botResponse]);
-    }, 1000);
-  };
+  } catch (error) {
+    console.error("Backend error:", error);
+    const errorMessage: Message = {
+      id: (Date.now() + 2).toString(),
+      text: language === 'en'
+        ? "Something went wrong. Please try again later."
+        : "कुछ गलत हो गया। कृपया बाद में पुनः प्रयास करें।",
+      isUser: false,
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, errorMessage]);
+  }
+};
 
   const handleQuickTopic = (topic: string) => {
     const topicMessages = {
