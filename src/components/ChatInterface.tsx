@@ -91,7 +91,7 @@ const ChatInterface = ({ language, onLanguageChange }: ChatInterfaceProps) => {
   setInputText("");
 
   try {
-    const response = await fetch("https://isro-antrakish-backend.onrender.com/chat", {
+    const response = await fetch("http://20.39.43.170:8000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
